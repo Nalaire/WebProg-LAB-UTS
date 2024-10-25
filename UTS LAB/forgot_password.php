@@ -107,7 +107,7 @@ if (isset($_SESSION['error'])) {
       header('location: login.php');
       exit;
     } else {
-      $_SESSION['message'] = "Email not found";
+      $_SESSION['error'] = "Email not found";
       header('location: forgot_password.php');
     }
 
