@@ -1,0 +1,102 @@
+Change log 1 :
+1. profile dropdown on navbar
+2. user login & register
+
+Change log 2 :
+1. register_process.php (check if username or email already exist)
+2. register.php (alert for if username or email already exist)
+3. login_process.php ($row['id'] into $row['user_id']) [line 23]
+4. home.php (' || $_SESSION['email'] !== true' is removed) [line 5]
+5. login_process.php (email is changed to user_name) [line 24]
+
+
+Change log 3 :
+1. logout.php (dari 'unset hanya username' jadi 'unset user id sama user_name')
+2. login_process.php & login.php (user bisa kotak katik url untuk ganti value error, jadi aku ganti ke integer sama saat di login.php integernya di parse supaya valuenya nggak bisa di kotak katik user)
+3. alert (bug fixed)
+4. register.php (added a button to go to login from register in case you 'actualy already have an account and just remembered that fact')
+
+Change log 4 :
+1. changed file name (insert_proses.php into insert_process.php)
+2. home.php (exit in line 7 wouldn't be executed anyway, so its a waste of line)
+3. home.php (added proper comment to separate which one is navbar and which one is the main page)
+4. home.php (added require_once db.php)
+5. basically home.php finally got it's content
+
+Change log 5 :
+1. changed file name (edit_list.php and delete_list.php changed to list_edit.php and list_delete.php)
+2. insert.php ('Please choose a List Name.' is changed to 'Please input the list name.')
+3. list_edit.php created
+4. home.php (url to edit and delete has been fixed so that they have their variable name)
+5. home.php (url to individual page, changed from id to list_id)
+6. added verification of list access to list_edit and list_edit_process
+7. basically editing a list is a finished feature
+
+Change log 6 :
+1. insert_process full rewrite of code
+2. insert.php (change form input name from list to list_name for standard way of naming the variable)
+3. insert.php (session initialization added)
+4. default alert status for home: (0, nothing happened), (1, Successfully inserted a list), (2, successfully edited a list), (3, successfully deleted a list);
+5. insert.php (form action="register_process.php" to form action="insert_process.php")
+6. registering now requires you to logout of your current account.
+7. created list_delete.php
+8. list_edit_process.php (if hidden input was tampered, now it will not proceed with the sql code if they actually don't have the access to it)
+9. database MySQL has been fixed, now userlab can delete.
+
+Change log 7 :
+1. added individual page (individual.php)
+2. added task_tick.php
+3. task_delete.php
+4. task_insert.php
+5. fixed register header on line 7
+
+Change log 8 :
+1. added search bar feature and filter feature in individual.php
+
+Change log 9 :
+1. insert.php (changed the h3 from 'user registration' to 'New List')
+2. removed list_delete.php, now using js function to delete and make an alertbox
+3. alert box is finished
+
+change log 10 :
+1. login will automatically logged in if session is still there
+
+Change log 11 :
+1. removed style for dropdown on navbar
+2. fixed the dropdown by adding script src for mdb ui kit
+3. added user.png for user profile picture
+4. added view_user.php to view user profile 
+5. added edit_user.php to edit user profile 
+6. individual.php, insert.php, list_edit.php title has been changed, logout and view profile are linked as well
+7. my profile is now linked and settings is deleted from dropdown
+
+Change log 12 :
+1. edit_user.php has been modified to prevent SQL injection and XSS
+2. htmlspecialchars is added in view_user.php to prevent XSS
+3. error status is modified to prevent XSS
+4. after edit user profile successfull, it goes to view_user.php
+5. removed edit list and remove list from navbar
+6. profile picture changed on individual.php, view_user.php, list_edit.php, insert.php, and edit_user.php
+
+Change log 13 :
+1. added exit() every after of header()
+
+Change log 14 :
+1. change_password.php
+2. change_password.php, edit_user.php are changed to english
+3. login.php and register.php style changes were made
+4. added mail function to send email in change_password.php
+5. list_edit.php invalid feedback changed
+
+
+Change log 15:
+1. individual.php(added alertbox warning for when deleting task)
+2. individual.php(changed task ticking/unticking to a post method so that you would not accidentally activated the php function while going through the said url by accident)
+3. task_tick.php(readjusted to post method)
+4. task_delete.php(readjusted to post method)
+
+Change log 16 :
+1. mail function removed, we will use alert instead
+2. change_password.php has been renamed to forgot_password.php
+3. created a new file change_password.php to handle change password on profile
+4. login.php forgot password now linked to forgot_password.php
