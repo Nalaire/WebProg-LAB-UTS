@@ -1,7 +1,7 @@
 <!--Page Init-->
 <?php
 require_once('db.php');
-
+session_start();
 if (isset($_SESSION['error'])) {
   echo "<script>alert('" . htmlspecialchars($_SESSION['error'], ENT_QUOTES, 'UTF-8') . "');</script>";
   unset($_SESSION['error']);
